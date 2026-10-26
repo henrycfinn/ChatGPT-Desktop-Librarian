@@ -14,7 +14,7 @@ The plugin is deliberately a **wrapper, not another knowledge system**:
 - optionally use Git for transaction checkpoints;
 - no Docker, database, daemon, or web server is required.
 
-> **Status:** early public release (`1.0.0`). Review the [Security & Trust Model](docs/security.md) before relying on it for high-stakes data.
+> **Status:** early public release (`1.2.0`). Review the [Security & Trust Model](docs/security.md) before relying on it for high-stakes data.
 
 ## Why this exists
 
@@ -83,7 +83,8 @@ Applying a staged proposal **re-hashes its target files and the proposal envelop
 
 For Codex, use the included local CLI adapter and `codex-librarian` skill; Hermes itself is not required for Codex to run the policy core.
 
-For ChatGPT Desktop, use the optional authenticated Streamable HTTP MCP connector.
+For ChatGPT Desktop, use the optional Streamable HTTP MCP connector through an
+authenticated OpenAI Secure MCP Tunnel.
 It provides explicit, read-only retrieval from the canonical Markdown knowledge
 base; it is not ChatGPT's built-in account-memory feature. See [ChatGPT Desktop
 connector](docs/chatgpt-desktop.md).
@@ -117,7 +118,7 @@ The setup command writes only this plugin's settings through Hermes. It does not
 After this repository is published:
 
 ```bash
-hermes plugins install <owner>/hermes-agentic-librarian --enable
+hermes plugins install <owner>/ChatGPT-Desktop-Librarian --enable
 hermes plugins doctor agentic-librarian --ci
 ```
 
@@ -274,9 +275,10 @@ The optional ChatGPT Desktop connector serves three read-only MCP tools:
 Markdown/Obsidian vault canonical and leaves all durable writes to the existing
 Librarian change/proposal workflow.
 
-The service binds to localhost and requires a bearer token. To use it in ChatGPT
-Work, connect it through OpenAI Secure MCP Tunnel rather than exposing the local
-port. Full setup, security boundary, and verification steps are in [ChatGPT Desktop
+The service binds only to localhost. By default it can require a bearer token;
+the explicit tunnel-only mode relies on the authenticated OpenAI Secure MCP Tunnel
+as the sole ingress and must never be used behind a public proxy. Full setup,
+security boundary, and verification steps are in [ChatGPT Desktop
 connector](docs/chatgpt-desktop.md).
 
 ## Configuration

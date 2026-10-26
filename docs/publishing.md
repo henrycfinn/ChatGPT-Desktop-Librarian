@@ -5,7 +5,7 @@ This repository is intentionally ready to live as a standalone public Hermes plu
 ## Suggested repository name
 
 ```text
-hermes-agentic-librarian
+ChatGPT-Desktop-Librarian
 ```
 
 A different repository name is fine; the Hermes plugin id remains `agentic-librarian` because that is the `name` in `plugin.yaml`.
@@ -34,7 +34,7 @@ The repository should not contain real runtime proposal/receipt files, local `.e
 Create an empty public repository in the GitHub UI, then from this source tree:
 
 ```bash
-git remote add origin https://github.com/<owner>/hermes-agentic-librarian.git
+git remote add origin https://github.com/<owner>/ChatGPT-Desktop-Librarian.git
 git branch -M main
 git push -u origin main
 ```
@@ -44,7 +44,7 @@ HTTPS works equally well if that is your normal Git authentication method.
 ## Test installation from the public repository
 
 ```bash
-hermes plugins install <owner>/hermes-agentic-librarian --enable
+hermes plugins install <owner>/ChatGPT-Desktop-Librarian --enable
 hermes plugins doctor agentic-librarian --ci
 ```
 

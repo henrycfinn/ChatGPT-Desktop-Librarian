@@ -1,6 +1,6 @@
-# Hermes Agentic Librarian
+# ChatGPT Desktop Librarian
 
-Purpose: A local-first Hermes plugin and Codex adapter that govern writes to an existing Markdown knowledge base. Routine low-risk changes may auto-apply. Destructive, conflicting, low-confidence, control-file, raw-source mutation, major-rewrite, and other risky changes are staged for selective human review.
+Purpose: A local-first ChatGPT Desktop, Codex, and Hermes integration for an existing Markdown knowledge base. ChatGPT Desktop receives explicit read-only retrieval through OpenAI Secure MCP Tunnel; Codex and Hermes share deterministic write governance. Routine low-risk changes may auto-apply. Destructive, conflicting, low-confidence, control-file, raw-source mutation, major-rewrite, and other risky changes are staged for selective human review.
 
 Canonical architecture:
 - User's Markdown folder / Obsidian vault: source of truth.
@@ -8,6 +8,7 @@ Canonical architecture:
 - Agentic Librarian: deterministic write policy, proposals, stale checks, receipts.
 - QMD (optional): retrieval/index and duplicate preflight only; never authoritative.
 - Git (optional): transaction checkpoint/audit only.
+- ChatGPT Desktop (optional): explicit read-only MCP retrieval through OpenAI Secure MCP Tunnel; not native account memory.
 
 No required Docker, database, daemon, web UI, QMD, Obsidian, or Git.
 No telemetry or hosted service.
@@ -24,6 +25,8 @@ Important trust rules:
 - shell guarding is conservative defense-in-depth, not an OS sandbox.
 
 Start here:
+- scripts/chatgpt_desktop_mcp.py - QMD-preferred, read-only MCP server for ChatGPT Desktop.
+- docs/chatgpt-desktop.md - ChatGPT Desktop connector setup and verification.
 - README.md — human overview, installation, usage.
 - AGENTS.md — coding-agent invariants and contribution instructions.
 - skills/librarian/SKILL.md — runtime Hermes workflow.

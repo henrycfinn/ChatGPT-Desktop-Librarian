@@ -1,4 +1,4 @@
-# AGENTS.md — Hermes Agentic Librarian
+# AGENTS.md — ChatGPT Desktop Librarian
 
 This file is the primary instruction set for coding agents working in this repository.
 

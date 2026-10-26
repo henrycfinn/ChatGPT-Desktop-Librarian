@@ -82,10 +82,11 @@ The plugin does not run `git push`, alter remotes, or make network requests.
 ## ChatGPT Desktop connector
 
 The optional ChatGPT Desktop MCP connector is a separate process. It is
-read-only, binds to loopback by default, and requires a bearer token for MCP
-requests. Use OpenAI Secure MCP Tunnel to make it reachable by ChatGPT Work;
-the tunnel must be associated with the intended Platform organization and
-ChatGPT workspace. Never expose the connector directly to the public internet.
+read-only and binds to loopback by default. It can require a bearer token for
+MCP requests, or run in explicit tunnel-only mode where the authenticated
+OpenAI Secure MCP Tunnel is the sole ingress. The tunnel must be associated
+with the intended Platform organization and ChatGPT workspace. Never expose
+the connector directly to the public internet.
 
 ## Proposal confidentiality
 
