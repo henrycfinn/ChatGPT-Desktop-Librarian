@@ -1,7 +1,7 @@
 """Shared constants for Agentic Librarian."""
 
 PLUGIN_ID = "agentic-librarian"
-PLUGIN_VERSION = "1.1.0"
+PLUGIN_VERSION = "1.2.0"
 TOOLSET = "agentic_librarian"
 
 RISK_FLAGS_REVIEW = {

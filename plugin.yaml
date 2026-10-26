@@ -1,5 +1,5 @@
 name: agentic-librarian
-version: 1.1.0
+version: 1.2.0
 manifest_version: 2
 api_version: 1
 description: Trust-aware autonomous knowledge-base governance for Hermes. Wraps existing Markdown/Obsidian wikis and optionally integrates with QMD and Git.

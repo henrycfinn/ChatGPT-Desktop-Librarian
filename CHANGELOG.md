@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented here.
 
+## [1.2.0] - 2026-10-24
+
+- Add an optional, authenticated, read-only Streamable HTTP MCP connector for
+  ChatGPT Desktop and Codex retrieval.
+- Document ChatGPT Work deployment, retrieval boundaries, and verification.
+
 ## [1.1.0] - 2026-10-02
 
 - Added a Codex CLI adapter and Codex skill that reuse the existing Librarian policy, staged proposal queue, stale-base checks, and receipts alongside Hermes.

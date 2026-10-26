@@ -1,6 +1,7 @@
-# Hermes Agentic Librarian
+# ChatGPT Desktop Librarian
 
-A local-first, trust-aware governance plugin for **Hermes Agent** knowledge bases.
+A local-first knowledge connector and trust-aware governance layer for **ChatGPT
+Desktop, Codex, and Hermes Agent** knowledge bases.
 
 It adds selective human-in-the-loop review **without turning every wiki edit into an approval prompt**. Routine knowledge work can remain autonomous; destructive, conflicting, low-confidence, or unusually large changes are staged for review.
 
@@ -81,6 +82,11 @@ Applying a staged proposal **re-hashes its target files and the proposal envelop
 - Python standard library only for this plugin.
 
 For Codex, use the included local CLI adapter and `codex-librarian` skill; Hermes itself is not required for Codex to run the policy core.
+
+For ChatGPT Desktop, use the optional authenticated Streamable HTTP MCP connector.
+It provides explicit, read-only retrieval from the canonical Markdown knowledge
+base; it is not ChatGPT's built-in account-memory feature. See [ChatGPT Desktop
+connector](docs/chatgpt-desktop.md).
 
 Optional:
 
@@ -261,6 +267,18 @@ Slash command:
 /librarian help
 ```
 
+## ChatGPT Desktop alongside Codex and Hermes
+
+The optional ChatGPT Desktop connector serves three read-only MCP tools:
+`search_memory`, `read_memory`, and `memory_status`. It keeps the existing
+Markdown/Obsidian vault canonical and leaves all durable writes to the existing
+Librarian change/proposal workflow.
+
+The service binds to localhost and requires a bearer token. To use it in ChatGPT
+Work, connect it through OpenAI Secure MCP Tunnel rather than exposing the local
+port. Full setup, security boundary, and verification steps are in [ChatGPT Desktop
+connector](docs/chatgpt-desktop.md).
+
 ## Configuration
 
 Example Hermes configuration shape:
@@ -346,6 +364,7 @@ This repository is designed to be discoverable by both people and coding agents:
 - [`docs/configuration.md`](docs/configuration.md) — settings and autonomy modes;
 - [`docs/hermes-llm-wiki.md`](docs/hermes-llm-wiki.md) — wrapper integration;
 - [`docs/obsidian-qmd.md`](docs/obsidian-qmd.md) — optional retrieval integration;
+- [`docs/chatgpt-desktop.md`](docs/chatgpt-desktop.md) — ChatGPT Work retrieval connector;
 - [`docs/security.md`](docs/security.md) — trust boundaries and threat model;
 - [`docs/troubleshooting.md`](docs/troubleshooting.md) — diagnosis and recovery.
 - [`ACKNOWLEDGEMENTS.md`](ACKNOWLEDGEMENTS.md) — public conceptual influences and independence statement.

@@ -24,3 +24,5 @@ dist/
 build/
 *.zip
 *.tar.gz
+.venv-chatgpt-mcp/
+tools/tunnel-client/

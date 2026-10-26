@@ -12,6 +12,10 @@
 - [Hermes Memory Architecture](memory-architecture.md) — how Hermes, Obsidian, QMD, and the Librarian fit together.
 - [Obsidian + QMD](obsidian-qmd.md) — canonical vault + optional retrieval/index.
 
+### ChatGPT Desktop
+
+- [ChatGPT Desktop connector](chatgpt-desktop.md) â€” explicit ChatGPT Work retrieval.
+
 ## Operations and trust
 
 - [Security & Trust Model](security.md) — explicit guarantees and non-guarantees.

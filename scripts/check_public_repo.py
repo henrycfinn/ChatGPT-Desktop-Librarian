@@ -12,7 +12,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SKIP_DIRS = {".git", "__pycache__", ".venv", "venv", "dist", "build"}
+SKIP_DIRS = {".git", "__pycache__", ".venv", ".venv-chatgpt-mcp", "venv", "dist", "build", "tools"}
 SKIP_SUFFIXES = {".pyc", ".png", ".jpg", ".jpeg", ".gif", ".zip", ".gz", ".tar", ".pdf"}
 
 CHECKS = {
